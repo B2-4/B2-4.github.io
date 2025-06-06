@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>DATOS DE CONTACTO</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff4f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      background-color: #fffafa;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+    }
+h1 {
+      text-align: center;
+      color: #cc8e8e;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      background-color: #ffecec;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #a06d6d;
+    }
+  textarea, select, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #e8a5a5;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #d78c8c;
+    }
+   .thank-you {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: #a56c6c;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>DATOS DE CONTACTO</h1>
+  <div class="contact-info">
+      <p><strong>Nombre:</strong>TRUE BEAUTY</p>
+      <p><strong>Teléfono:</strong> &nbsp;712 456 7890</p>
+      <p><strong>Correo electrónico:</strong> beautiful12@gmail.com</p>
+      <p><strong>Dirección:</strong> San Fransisco del Rio</p>
+    </div>
+
+    <form id="encuesta-form">
+      <label for="preg1">¿Con qué frecuencia usas maquillaje?</label>
+      <select id="preg1" required>
+        <option value="">Selecciona una opción</option>
+        <option value="diario">A diario</option>
+        <option value="ocasional">Ocasionalmente</option>
+        <option value="nunca">Nunca</option>
+      </select>
+
+      <label for="preg2">¿Cuál es tu producto de maquillaje favorito?</label>
+		<select id="preg2" required>
+       <option value="">Selecciona una opción</option>
+       <option value="diario">Labial</option>
+       <option value="ocasional">Rimel</option>
+	   <option value="nunca">Rubor</option>
+		</select>
+		
+      <label for="preg3">¿Prefieres maquillaje natural o llamativo?</label>
+      <select id="preg3" required>
+        <option value="">Selecciona una opción</option>
+        <option value="natural">Natural</option>
+        <option value="llamativo">Llamativo</option>
+        <option value="depende">Depende de la ocasión</option>
+      </select>
+
+      <label for="preg4">¿En qué rango de precios compras maquillaje?</label>
+      <select id="preg4" required>
+        <option value="">Selecciona una opción</option>
+        <option value="económico">Económico</option>
+        <option value="medio">Medio</option>
+        <option value="premium">Premium</option>
+      </select>
+
+      <label for="preg5">¿Qué tan importante es para ti que el maquillaje sea cruelty-free?</label>
+      <select id="preg5" required>
+        <option value="">Selecciona una opción</option>
+        <option value="muy_importante">Muy importante</option>
+        <option value="poco_importante">Poco importante</option>
+        <option value="no_importa">No me importa</option>
+      </select>
+
+      <button type="submit">Enviar encuesta</button>
+    </form>
+ <div class="thank-you" id="mensajeGracias">
+      ¡Muchas gracias por responder nuestra encuesta!
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("encuesta-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      this.style.display = "none";
+      document.getElementById("mensajeGracias").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>

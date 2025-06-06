@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>G A L E R I A   D E  V I D E O   </title>
+  <style>
+    body {
+      background-color: #ffc0cb; /* Fondo rosa claro */
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #ff1493; /* Tono fuerte de rosa */
+      margin: 20px 0;
+    }
+    #video-container {
+      max-width: 300px;
+      margin: auto;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+ <h1>Galería de Videos</h1>
+
+  <div id="video-container">
+    <video id="video-player" controls autoplay></video>
+  </div>
+
+  <script>
+    // Lista de videos
+    const videos = [
+      "video1.mp4",
+      "video2.mp4",
+      "video3.mp4",
+      "video4.mp4",
+ "video5.mp4",
+      "video6.mp4",
+      "video7.mp4",
+      "video8.mp4",
+      "video9.mp4",
+      "video10.mp4"
+    ];
+
+    let currentVideo = 0;
+    const player = document.getElementById("video-player");
+
+    function loadVideo(index) {
+      player.src = videos[index];
+      player.play();
+    }
+
+    // Cargar el primer video
+    loadVideo(currentVideo);
+
+    // Al terminar un video, cargar el siguiente
+    player.addEventListener("ended", () => {
+      currentVideo++;
+      if (currentVideo < videos.length) {
+        loadVideo(currentVideo);
+      } else {
+        // Repetir desde el principio si se desea
+        currentVideo = 0;
+ loadVideo(currentVideo);
+      }
+    });
+  </script>
+
+</body>
+</html>
